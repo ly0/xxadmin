@@ -509,7 +509,7 @@ def coordinates_field(value, field, model_admin):
 
 def display_for_field(value, field , model_admin=None, **kwargs):
     from xadmin.views.list import EMPTY_CHANGELIST_VALUE
-    from xadmin.fields import ColorField, ImageWithThumbField, CoordinatesField
+    from xadmin.fields import ColorField, ImageWithThumbField
 
     if field.flatchoices:
         return dict(field.flatchoices).get(value, EMPTY_CHANGELIST_VALUE)
@@ -531,8 +531,6 @@ def display_for_field(value, field , model_admin=None, **kwargs):
         return ', '.join([smart_text(obj) for obj in value.all()])
     elif isinstance(field, ColorField):
         return collor_field(value)
-    elif isinstance(field, CoordinatesField):
-        return coordinates_field(value, field, model_admin)
     elif isinstance(field, ImageWithThumbField):
         return image_field(value, field, **kwargs)
     else:

@@ -1246,7 +1246,7 @@ msgid "Save changes"
 msgstr "Išsaugoti pakeitimus"
 
 #: views/base.py:442
-msgid "Django Xadmin"
+msgid "Control Panel"
 msgstr ""
 
 #: views/dashboard.py:189

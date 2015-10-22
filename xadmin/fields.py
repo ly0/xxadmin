@@ -1,5 +1,5 @@
 from sorl.thumbnail import ImageField, get_thumbnail
-from django.contrib.gis.db import models as gis_models
+#from django.contrib.gis.db import models as gis_models
 
 from django.core import exceptions
 from django.db import models
@@ -46,15 +46,15 @@ class ColorField(models.CharField):
         super(ColorField, self).__init__(*args, **kwargs)
 
 
-class CoordinatesField(gis_models.PointField):
-    def __init__(self, verbose_name=None, name_for_map=None, show_in_map=None, **kwargs):
-        kwargs['geography'] = True
-        self.name_for_map = name_for_map
-        self.show_in_map = show_in_map
-        super(CoordinatesField, self).__init__(verbose_name, **kwargs)
-
-    def formfield(self, **kwargs):
-        from xadmin.widgets import AdminOpenStreetMapWidget
-        field = super(CoordinatesField, self).formfield(**kwargs)
-        field.widget = AdminOpenStreetMapWidget() #forms.CharField
-        return field
+# class CoordinatesField(gis_models.PointField):
+#     def __init__(self, verbose_name=None, name_for_map=None, show_in_map=None, **kwargs):
+#         kwargs['geography'] = True
+#         self.name_for_map = name_for_map
+#         self.show_in_map = show_in_map
+#         super(CoordinatesField, self).__init__(verbose_name, **kwargs)
+#
+#     def formfield(self, **kwargs):
+#         from xadmin.widgets import AdminOpenStreetMapWidget
+#         field = super(CoordinatesField, self).formfield(**kwargs)
+#         field.widget = AdminOpenStreetMapWidget() #forms.CharField
+#         return field

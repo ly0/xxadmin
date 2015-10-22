@@ -1158,7 +1158,7 @@ msgid "Save changes"
 msgstr ""
 
 #: views/base.py:430
-msgid "Django Xadmin"
+msgid "Control Panel"
 msgstr ""
 
 #: views/dashboard.py:185
